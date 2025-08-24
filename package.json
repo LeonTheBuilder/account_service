@@ -1,6 +1,6 @@
 {
   "name": "account_service",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "dev": "nodemon src/main.js",
     "prod": "nodemon src/main.js"
