@@ -3,9 +3,7 @@ const cfgdef = require('aframework/cfgdef');
 const commonCfgSet = require('./cfgset');
 const cfg = cfgdef();
 //----------------------------------------------------------------
-cfg.loadContextFilePath = path.join(__dirname, 'loadcontext.js');
-cfg.genFolder = path.join(__dirname, 'gen');
-cfg.typeJsFolder = __dirname;
+cfg.app.rootFolder = path.join(__dirname, '..');
 cfg.autowire.folders = [
     __dirname,
 ];
