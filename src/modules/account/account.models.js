@@ -5,12 +5,12 @@ const Account = db.define(
     'Account',
     {
         id: {
-            type: DataTypes.BIGINT,
+            type: DataTypes.STRING(25),
             allowNull: false,
             primaryKey: true,
         },
         userId: {
-            type: DataTypes.BIGINT,
+            type: DataTypes.STRING(25),
             allowNull: false,
         },
         currency: {
@@ -28,6 +28,12 @@ const Account = db.define(
         },
     },
     {
+        tableName: 'acc_account',
+        freezeTableName: true,
+        charset: 'utf8mb4',
+        timestamps: true,
+        createdAt: true,
+        updatedAt: true,
         indexes: [
             {
                 unique: true,
@@ -42,12 +48,12 @@ const Account = db.define(
 const Accounting = db.define('Accounting',
     {
         id: {
-            type: DataTypes.BIGINT,
+            type: DataTypes.STRING(25),
             allowNull: false,
             primaryKey: true,
         },
         tradeOrderId: {
-            type: DataTypes.BIGINT,
+            type: DataTypes.STRING(25),
             allowNull: false,
         },
         bizKey: {
@@ -60,6 +66,8 @@ const Accounting = db.define('Accounting',
         },
     },
     {
+        tableName: 'acc_accounting',
+        freezeTableName: true,
         charset: 'utf8mb4',
         timestamps: true,
         createdAt: true,
@@ -78,16 +86,16 @@ const AccountRecord = db.define(
     'AccountRecord',
     {
         id: {
-            type: DataTypes.BIGINT,
+            type: DataTypes.STRING(25),
             allowNull: false,
             primaryKey: true,
         },
         accountId: {
-            type: DataTypes.BIGINT,
+            type: DataTypes.STRING(25),
             allowNull: false,
         },
         accountingId: {
-            type: DataTypes.BIGINT,
+            type: DataTypes.STRING(25),
             allowNull: false,
         },
         amount: {
@@ -119,6 +127,12 @@ const AccountRecord = db.define(
 
     },
     {
+        tableName: 'acc_account_record',
+        freezeTableName: true,
+        charset: 'utf8mb4',
+        timestamps: true,
+        createdAt: true,
+        updatedAt: true,
         indexes: [
             {
                 fields: ['accountId'],

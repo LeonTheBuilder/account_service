@@ -11,7 +11,7 @@ cfg.autowire.folders = [
 ];
 //----------------------------------------------------------------
 cfg.web.view.viewFolder = require('./web/views/viewfolder');
-cfg.mysql.database = 'commonbiz';
+cfg.mysql.database = 'account_service';
 //----------------------------------------------------------------
 commonCfgSet(cfg);
 //----------------------------------------------------------------

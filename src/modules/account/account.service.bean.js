@@ -13,7 +13,7 @@ class AccountService {
         });
 
 
-        const id = await this.idgen.nextInt();
+        const id = await this.idgen.next();
         const account = this.Account.build({
             id: id,
             userId: userId,
@@ -181,7 +181,7 @@ class AccountService {
 
         // todo 处理迷瞪，如果幂等了就直接返回 accounting
 
-        const id = await this.idgen.nextInt();
+        const id = await this.idgen.next();
         const accounting = this.Accounting.build({id: id});
         accounting.tradeOrderId = tradeOrderId;
         accounting.bizKey = bizKey;
@@ -273,7 +273,7 @@ class AccountService {
 
         //
         // 加流水
-        const recordId = await this.idgen.nextInt();
+        const recordId = await this.idgen.next();
         const accountRecord = this.AccountRecord.build({id: recordId});
         accountRecord.amount = amount;
         accountRecord.opt = opt;
